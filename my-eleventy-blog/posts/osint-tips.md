@@ -93,6 +93,4 @@ Selamat ngulik.
 
 ---
 
-Butuh panduan lanjut soal tools atau cara riset OSINT yang aman? Nantikan artikel selanjutnya atau cek highlight `recon` di IG-ku @pratividery.
-
 
