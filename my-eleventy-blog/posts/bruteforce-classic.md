@@ -1,6 +1,9 @@
 ---
 title: "Bruteforce: Teknik Lama yang Masih Ngeri Sampai Sekarang"
 date: 2025-04-11
+tags: post
+---
+
 description: Teknik bruteforce dalam cybersecurity bisa jadi ancaman serius kalau digunakan tanpa etika. Saya coba jelaskan dengan gaya ringan untuk kamu yang awam tapi penasaran.
 ---
 
