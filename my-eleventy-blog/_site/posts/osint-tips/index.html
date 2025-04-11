@@ -2,6 +2,7 @@
 <html lang="id">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1"> <!-- Tambahan penting -->
   <title>Tips Dasar OSINT | Pratividery</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&display=swap" rel="stylesheet">
@@ -14,51 +15,70 @@
       color: #111;
       background: #fff;
       line-height: 1.6;
+      font-size: 1rem;
     }
+
     a {
       color: inherit;
       text-decoration: underline;
     }
+
     nav {
       margin-bottom: 2rem;
     }
+
     h1, h2, h3 {
       margin-top: 2rem;
       line-height: 1.2;
     }
+
     hr {
       margin: 3rem 0;
       border: none;
       border-top: 1px solid #ddd;
     }
+
     ul {
       padding-left: 1.2rem;
     }
+
     footer {
       margin-top: 4rem;
       font-size: 0.9rem;
       color: #aaa;
     }
-    nav span {
-  color: #999;
-  margin-right: 0.5rem;
-}
 
+    nav span {
+      color: #999;
+      margin-right: 0.5rem;
+    }
+
+    /* Tambahan responsif */
+    @media (max-width: 600px) {
+      body {
+        font-size: 1.1rem;
+        padding: 0 1.2rem;
+        margin: 2rem auto;
+      }
+
+      nav {
+        font-size: 1rem;
+      }
+    }
   </style>
 </head>
 <body>
   <nav>
-  <span>$</span> <a href="/">home</a> | <a href="/about/">about</a>
-</nav>
-
+    <span>$</span> <a href="/">home</a> | <a href="/about/">about</a>
+  </nav>
 
   <main>
     <p>Beberapa tips sederhana untuk melakukan OSINT dengan aman dan efektif.</p>
 
   </main>
+
   <footer style="margin-top: 4rem; font-family: monospace; font-size: 0.85rem; color: #777; text-align: center;">
-  <p>© 2025 Dery</p>
-</footer>
-</footer>
+    <p>© 2025 Dery</p>
+  </footer>
 </body>
 </html>
