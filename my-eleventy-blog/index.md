@@ -10,5 +10,5 @@ _Welcome to my corner of the web_
 ---
 
 {% for post in collections.post | reverse %}
-- [{{ post.data.title }}]({{ post.url }}) <small>({{ post.date | date: "%d %B %Y" }})</small>
+📂 [{{ post.data.title }}]({{ post.url }}) <small>({{ post.date | date: "%d %B %Y" }})</small>
 {% endfor %}
