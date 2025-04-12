@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1"> <!-- Tambahan penting -->
   <title>Tips Dasar OSINT | Pratividery</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="stylesheet" href="/assets/style.css">
   <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&display=swap" rel="stylesheet">
   <style>
     body {
@@ -73,7 +74,93 @@
   </nav>
 
   <main>
-    <p>Beberapa tips sederhana untuk melakukan OSINT dengan aman dan efektif.</p>
+    <h1>Tips Dasar OSINT: Ngulik Informasi dari Dunia Terbuka</h1>
+<p>Kalau kamu pikir data penting cuma bisa didapetin lewat hacking yang ribet atau akses ke sistem tertutup, kamu belum kenal OSINT. OSINT (Open Source Intelligence) itu semacam &quot;ilmu detektif digital&quot; yang memanfaatkan data terbuka—dan ya, <em>legal</em>—yang berserakan di internet. Kamu nggak perlu jadi hacker untuk tahu banyak hal. Cukup modal rasa penasaran, logika yang jalan, dan sedikit trik.</p>
+<h2>Apa Itu OSINT?</h2>
+<p>OSINT adalah teknik ngumpulin informasi dari sumber terbuka. Artinya, kamu bisa cari tahu banyak hal dari:</p>
+<ul>
+<li>Website pemerintah</li>
+<li>Sosial media</li>
+<li>Forum publik</li>
+<li>Arsip digital</li>
+<li>Gambar atau metadata</li>
+</ul>
+<p>Semua itu bisa kamu gali lebih dalam dan menghasilkan intelijen yang <em>beneran</em> berguna. Bahkan buat hal sepele kayak ngecek kredibilitas akun olshop, atau yang serius kayak investigasi kasus penipuan.</p>
+<h2>Kenapa OSINT Itu Powerful Banget?</h2>
+<ol>
+<li>
+<p><strong>Semua orang bisa melakukannya</strong><br>
+Gak perlu alat canggih. Hanya dengan browser dan otak yang aktif, kamu udah bisa jalanin OSINT.</p>
+</li>
+<li>
+<p><strong>Dipakai profesional</strong><br>
+Jurnalis, penegak hukum, hingga intelijen negara pun pakai OSINT. Bahkan beberapa kasus kejahatan cyber berhasil dipecahkan cuma dari data publik.</p>
+</li>
+<li>
+<p><strong>Darkweb pun bisa dipantau</strong><br>
+Dengan OSINT, kamu bisa tahu kalau data kamu bocor dan dijual di forum gelap. Misalnya lewat tools kayak:</p>
+<ul>
+<li><code>HaveIBeenPwned</code>: buat cek email/password bocor</li>
+<li><code>Intelligence X</code> atau <code>DarkSearch</code>: buat lacak info di darkweb</li>
+</ul>
+</li>
+<li>
+<p><strong>Nyambung ke banyak hal</strong><br>
+OSINT bukan cuma soal &quot;cari tahu&quot;. Tapi juga soal menghubungkan titik-titik:</p>
+<ul>
+<li>Nama = username = email = akun sosmed = IP Address = lokasi</li>
+<li>Satu info bisa nyeret ke banyak info lainnya</li>
+</ul>
+</li>
+</ol>
+<h2>Beberapa Teknik Dasar OSINT</h2>
+<h3>1. Google Dorking</h3>
+<p>Google bukan sekadar mesin pencari. Gunakan keyword yang &quot;diprogram&quot; kayak:</p>
+<pre><code>filetype:pdf site:go.id
+intitle:&quot;index of&quot; confidential
+inurl:login.php
+</code></pre>
+<p>Bisa nemuin file tersembunyi, dokumen penting, dan info sensitif dari situs-situs terbuka.</p>
+<h3>2. Reverse Image Search</h3>
+<p>Kamu punya foto seseorang tapi nggak tahu itu siapa? Coba cari lewat:</p>
+<ul>
+<li>Google Image Search</li>
+<li>Yandex (lebih akurat untuk wajah)</li>
+<li>TinEye</li>
+</ul>
+<p>Kadang dari satu foto, kamu bisa nemuin akun sosial media, lokasi, bahkan nama aslinya.</p>
+<h3>3. Metadata &amp; Exif Data</h3>
+<p>File digital menyimpan informasi tersembunyi, misalnya:</p>
+<ul>
+<li>Lokasi pengambilan foto</li>
+<li>Tanggal dan waktu</li>
+<li>Tipe kamera atau software</li>
+</ul>
+<p>Gunakan tools kayak <code>ExifTool</code> atau <code>metapicz.com</code> buat bongkar data itu.</p>
+<h3>4. Pencarian Sosial Media</h3>
+<p>Cek username seseorang di banyak platform lewat <code>namechk.com</code>, <code>whatsmyname.app</code>, atau <code>maigret</code> (tools OSINT berbasis CLI).</p>
+<p>Dari satu username, kamu bisa tahu preferensi, komunitas, bahkan email pribadi.</p>
+<h2>Fakta Mengejutkan Soal OSINT</h2>
+<ul>
+<li><strong>70% investigasi siber bisa dimulai dari data publik</strong>. Bahkan kasus besar seperti peretasan atau penipuan online.</li>
+<li><strong>Foto bisa mengarah ke lokasi</strong>. Banyak kasus ditemukan pelaku kejahatan dari latar belakang foto yang mereka unggah.</li>
+<li><strong>Darkweb penuh data bocor</strong>. Identitas, dokumen, bahkan rekam medis bisa muncul di sana. Dan sering kali, korban nggak sadar.</li>
+</ul>
+<h2>Etika dan Legalitas</h2>
+<p>Ini penting: meskipun data itu terbuka, bukan berarti bebas digunakan sembarangan. Jangan doxing (sebarin data pribadi orang tanpa izin), jangan stalking, dan tetap gunakan OSINT untuk hal-hal positif seperti:</p>
+<ul>
+<li>Investigasi hoaks</li>
+<li>Melindungi identitas digital pribadi</li>
+<li>Edukasi keamanan</li>
+</ul>
+<h2>Penutup</h2>
+<p>OSINT itu seni. Gabungan antara rasa ingin tahu, logika, dan ketelitian. Dunia internet itu seperti puzzle besar—dan OSINT ngajarin kita cara nyusun potongan-potongan itu jadi sesuatu yang bermakna.</p>
+<p>Kalau kamu baru mulai, cukup eksplor pelan-pelan. Mulai dari ngecek akun-akun sosial media palsu, belajar google dork, dan biasakan analisa gambar atau dokumen. Dari situ, kamu bakal makin peka.</p>
+<blockquote>
+<p>Internet penuh rahasia. Yang membedakan hanyalah: siapa yang tahu cara membacanya.</p>
+</blockquote>
+<p>Selamat ngulik.</p>
+<hr>
 
   </main>
 

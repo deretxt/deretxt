@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1"> <!-- Tambahan penting -->
+  <title>Bruteforce: Cara Jadul, Maksa Banget, Tapi Masih Ampuh! | Pratividery</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="stylesheet" href="/assets/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'IBM Plex Mono', monospace;
+      max-width: 700px;
+      margin: 4rem auto;
+      padding: 0 1rem;
+      color: #111;
+      background: #fff;
+      line-height: 1.6;
+      font-size: 1rem;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: underline;
+    }
+
+    nav {
+      margin-bottom: 2rem;
+    }
+
+    h1, h2, h3 {
+      margin-top: 2rem;
+      line-height: 1.2;
+    }
+
+    hr {
+      margin: 3rem 0;
+      border: none;
+      border-top: 1px solid #ddd;
+    }
+
+    ul {
+      padding-left: 1.2rem;
+    }
+
+    footer {
+      margin-top: 4rem;
+      font-size: 0.9rem;
+      color: #aaa;
+    }
+
+    nav span {
+      color: #999;
+      margin-right: 0.5rem;
+    }
+
+    /* Tambahan responsif */
+    @media (max-width: 600px) {
+      body {
+        font-size: 1.1rem;
+        padding: 0 1.2rem;
+        margin: 2rem auto;
+      }
+
+      nav {
+        font-size: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <span>$</span> <a href="/">home</a> | <a href="/about/">about</a>
+  </nav>
+
+  <main>
+    <h2>Bruteforce: Cara Jadul, Maksa Banget, Tapi Masih Ampuh!</h2>
+<blockquote>
+<p>Kadang saya mikir, kenapa ya teknik jadul kayak bruteforce masih aja dipakai? Jawabannya simpel: karena kadang... masih works.</p>
+</blockquote>
+<p>Saya udah kenal teknik bruteforce ini sejak lama. Dan baru-baru ini, saya kepikiran buat nyimulasikan ulang — sekadar nostalgia, dan siapa tahu bisa jadi bahan edukasi buat kalian yang awam soal dunia IT, tapi pengen ngerti kenapa password kalian bisa gampang dibobol.</p>
+<h3>Apa Itu Bruteforce? (Versi yang Gampang Dicerna)</h3>
+<p>Bruteforce itu teknik nebak password secara brutal — bener-bener nebak satu per satu sampai dapet. Kayak kamu ngintip koper orang dan coba dari 0000 sampai 9999. Kalau kebetulan password-nya 1234, ya dapet deh. Teknik ini nggak pintar, cuma sabar dan ulet. Dan kadang, itu aja udah cukup buat ngejebol sistem yang kurang aman.</p>
+<h3>Siapa Aja Korbannya?</h3>
+<p>Siapapun bisa jadi korban teknik ini. Mulai dari:</p>
+<ul>
+<li>Orang yang pake password &quot;admin&quot;, &quot;123456&quot;, atau &quot;password123&quot;.</li>
+<li>Sistem yang nggak punya mekanisme pengamanan tambahan kayak 2FA.</li>
+<li>Website yang nggak ngeblokir setelah 10 kali login gagal.</li>
+<li>Platform sosial media yang user-nya malas ganti password.</li>
+<li>Bahkan instansi gede yang sistemnya udah tua tapi nggak diperbarui.</li>
+</ul>
+<p>Jadi kalau kamu pikir, &quot;Ah, akun IG-ku aman kok!&quot; — ya, bisa jadi cuma karena belum dicoba aja.</p>
+<h3>Tools Buat Bruteforce — Saya Pilih Hydra, Kenapa?</h3>
+<p>Saya pakai <strong>Hydra</strong> buat simulasi ini. Kenapa Hydra?</p>
+<ol>
+<li>Udah populer di kalangan pentester.</li>
+<li>Bisa jalan di banyak protokol: HTTP, FTP, SSH, sampai telnet.</li>
+<li>CLI-nya enak dan fleksibel.</li>
+<li>Dokumentasinya jelas.</li>
+</ol>
+<p>Tools lain sebenernya banyak, kayak:</p>
+<ul>
+<li><strong>Medusa</strong> — cepet juga, mirip Hydra.</li>
+<li><strong>Ncrack</strong> — jago di network protocol.</li>
+<li><strong>Patator</strong> — lebih modular dan custom.</li>
+</ul>
+<p>Tapi ya balik lagi, saya nyaman pakai Hydra.</p>
+<h3>Setup Hydra di WSL — Karena Saya Pakainya Windows</h3>
+<p>Saya jalankan ini di <strong>WSL</strong> (Windows Subsystem for Linux), karena:</p>
+<ul>
+<li>Saya pakai Windows, tapi butuh feel Linux.</li>
+<li>Install tools kayak Hydra di WSL lebih gampang.</li>
+<li>Bisa langsung testing localhost dari situ.</li>
+</ul>
+<p>Kalau kamu pake Windows dan belum punya WSL:</p>
+<pre class="terminal"><code>
+wsl --install
+sudo apt update && sudo apt install hydra
+</pre>
+<p>Udah, itu doang. Gak ribet.</p>
+<h3>Simulasi Bruteforce di Localhost, Bukan Web Orang</h3>
+<p>Penting banget ya: <strong>saya gak nyerang website orang</strong>. Saya bikin simulasi login form di localhost — artinya di PC sendiri. Tujuannya biar bisa eksplorasi, tanpa bikin dosa digital.</p>
+<p>Berikut contoh command line-nya:</p>
+<pre class="terminal"><code>hydra -L user.txt -P pass.txt 127.0.0.1 http-post-form "/login.php:username=^USER^&password=^PASS^:Login Gagal"</code></pre>
+<p>Penjelasan singkat:</p>
+<ul>
+<li><code>-L</code> itu file list username.</li>
+<li><code>-P</code> itu file list password.</li>
+<li><code>http-post-form</code> buat simulasi form login via POST.</li>
+<li>Yang terakhir itu respon gagal yang jadi patokan.</li>
+</ul>
+<p>Kalau berhasil, Hydra bakal ngasih tahu: &quot;Login found!&quot; — dan rasanya... satisfying.</p>
+<h3>Tips Buat Kamu yang Gak Mau Jadi Korban</h3>
+<p>Ini 10 hal yang bisa kamu lakukan supaya akun kamu gak gampang dijebol:</p>
+<ol>
+<li>Jangan pake password &quot;123456&quot;.</li>
+<li>Jangan pake nama kamu + tanggal lahir.</li>
+<li>Aktifkan 2FA di mana pun bisa.</li>
+<li>Jangan pake username default kayak &quot;admin&quot;.</li>
+<li>Jangan reuse password di banyak akun.</li>
+<li>Ganti password secara berkala.</li>
+<li>Pake password manager.</li>
+<li>Jangan simpen password di notes HP.</li>
+<li>Gunakan CAPTCHA dan rate limiting di website sendiri.</li>
+<li>Monitor aktivitas login mencurigakan.</li>
+</ol>
+<h3>Fakta Nyata: Bruteforce Gak Cuma Teori</h3>
+<p>Beberapa kasus nyata:</p>
+<ul>
+<li><strong>2013</strong>: Adobe kena bruteforce, jutaan akun bocor.</li>
+<li><strong>2021</strong>: Colonial Pipeline disusupi — awalnya dari login yang bocor.</li>
+<li><strong>Beberapa akun Twitter seleb</strong> juga sempet dijebol karena password yang terlalu simpel.</li>
+</ul>
+<p>Bruteforce mungkin jadul, tapi kalau sistem dan user-nya masih polos, ya tetep bisa.</p>
+<h3>Di Darkweb, Bruteforce Nggak Jalan Sendiri</h3>
+<p>Di darkweb, teknik ini sering dikombinasikan dengan:</p>
+<ul>
+<li><strong>Credential stuffing</strong> (pakai password bocoran).</li>
+<li><strong>Social engineering</strong> (biar dapet clue buat nebak password).</li>
+<li><strong>Dictionary attack</strong> (versi pintar bruteforce).</li>
+</ul>
+<p>Contohnya gini: dapet email dari leak, masukin ke tool, digabungin sama list password dari breach sebelumnya. Bruteforce tinggal finishing aja.</p>
+<h3>Bruteforce dan OSINT: Duo Serem</h3>
+<p>Kalau kamu udah belajar OSINT (Open Source Intelligence), kamu bisa:</p>
+<ul>
+<li>Nemuin nama pacar target.</li>
+<li>Nemuin tanggal lahir.</li>
+<li>Nemuin email lama.</li>
+</ul>
+<p>Dan dari sana... bisa buat wordlist yang sangat personal. Bruteforce-nya jadi makin akurat dan serem.</p>
+<h3>Penutup: Yang Jadul Belum Tentu Gak Bahaya</h3>
+<p>Bruteforce itu kayak mantan toxic: udah lama, tapi kadang masih balik-balik dan nyakitin. Jangan remehin cuma karena tekniknya &quot;cuma nebak-nebak&quot;. Justru karena itu, siapapun bisa nyobain, termasuk script kiddie.</p>
+<p>Kalau kamu ngerasa akunmu aman, coba pikir ulang. Udah ganti password? Udah pake 2FA? Udah nggak pake nama kucing sebagai PIN?</p>
+<p>Terus...</p>
+<blockquote>
+<p>&quot;Security itu bukan soal alatnya, tapi soal kebiasaan manusianya.&quot;</p>
+</blockquote>
+<p>Jleb? Ya emang harus.</p>
+<h3>Ayo Pilih, Bahas Apa Lagi?</h3>
+<p>Saya udah bahas bruteforce. Tapi banyak teknik lain yang gak kalah serem:</p>
+<ul>
+<li><strong>Phishing</strong></li>
+<li><strong>Keylogger</strong></li>
+<li><strong>Password spraying</strong></li>
+<li><strong>Credential stuffing</strong></li>
+<li><strong>Man-in-the-middle attack</strong></li>
+</ul>
+<p>Komentar di bawah, mau saya bahas yang mana? Atau mau dikasih wordlist buat simulasi? 😏</p>
+<p>Sampai sini dulu, stay safe, jangan pake password nama mantan. Peace.</p>
+
+  </main>
+
+  <footer style="margin-top: 4rem; font-family: monospace; font-size: 0.85rem; color: #777; text-align: center;">
+    <p>© 2025 Dery</p>
+  </footer>
+</body>
+</html>

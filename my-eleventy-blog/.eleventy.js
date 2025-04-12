@@ -1,9 +1,5 @@
-module.exports = function (eleventyConfig) {
-  // Tambahkan koleksi 'posts' dari folder ./posts/*.md
-  eleventyConfig.addCollection("posts", function (collectionApi) {
-    return collectionApi.getFilteredByGlob("./posts/*.md");
-  });
-
+module.exports = function(eleventyConfig) {
+  eleventyConfig.addPassthroughCopy("assets");
   return {
     dir: {
       input: ".",

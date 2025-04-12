@@ -1,0 +1,27 @@
+pre.terminal {
+  background-color: #1e1e1e;
+  color: #d4d4d4;
+  padding: 1em;
+  border-radius: 0.5em;
+  overflow-x: auto;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.9em;
+  line-height: 1.5;
+  margin: 1.5rem 0;
+  position: relative;
+}
+
+pre.terminal::before {
+  content: "$ ";
+  color: #00ff00;
+  position: absolute;
+  top: 1em;
+  left: 1em;
+  pointer-events: none;
+}
+
+pre.terminal code {
+  padding-left: 2em;
+  display: block;
+  white-space: pre;
+}
