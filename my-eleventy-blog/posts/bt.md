@@ -54,17 +54,10 @@ Saya jalankan ini di **WSL** (Windows Subsystem for Linux), karena:
 
 Kalau kamu pake Windows dan belum punya WSL:
 
-<<<<<<< HEAD
 <pre class="terminal"><code>
 wsl --install
 sudo apt update && sudo apt install hydra
 </pre>
-=======
-```bash
-wsl --install
-sudo apt update && sudo apt install hydra
-```
->>>>>>> 7750ac05c1902a1d22fbf308a6a2afb857674b9b
 
 Udah, itu doang. Gak ribet.
 
@@ -73,16 +66,7 @@ Udah, itu doang. Gak ribet.
 Penting banget ya: **saya gak nyerang website orang**. Saya bikin simulasi login form di localhost — artinya di PC sendiri. Tujuannya biar bisa eksplorasi, tanpa bikin dosa digital.
 
 Berikut contoh command line-nya:
-
-<<<<<<< HEAD
 <pre class="terminal"><code>hydra -L user.txt -P pass.txt 127.0.0.1 http-post-form "/login.php:username=^USER^&password=^PASS^:Login Gagal"</code></pre>
-
-
-=======
-```bash
-hydra -L user.txt -P pass.txt 127.0.0.1 http-post-form "/login.php:username=^USER^&password=^PASS^:Login Gagal"
-```
->>>>>>> 7750ac05c1902a1d22fbf308a6a2afb857674b9b
 
 Penjelasan singkat:
 
