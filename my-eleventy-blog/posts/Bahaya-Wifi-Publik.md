@@ -1,6 +1,6 @@
 ---
 layout: layout.njk
-title: "Tips Dasar OSINT"
+title: "Jangan Asal Konek Wifi Publik  Bahaya, Bro!"
 date: 2025-04-13
 tags: post
 ---
